@@ -1,1 +1,1 @@
-# 501-project-f22
+# Stats 501 project for Fall'22
