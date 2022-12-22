@@ -7,20 +7,13 @@ date: "2022-12-18"
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 library(mosaic)
+library(dplyr)
+library(tidyverse)
 ```
 
 ## R Markdown
 
 This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
-
-
-## Including Plots
-
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
 
@@ -29,16 +22,31 @@ Note that the `echo = FALSE` parameter was added to the code chunk to prevent pr
 
 ```{r}
 adult <- read.table("adult.data", sep = ",")
-colnames(adult) <- c("age", "workclass", "fnlwgt", "education", "education_num", "marital_status", "occupation", "relationship", "race", "sex", "capital_gain", "capital_loss", "hours_per_week", "native_country", "50k")
+colnames(adult) <- c("age", "workclass", "fnlwgt", "education", "education_num", "marital_status", "occupation", "relationship", "race", "sex", "capital_gain", "capital_loss", "hours_per_week", "native_country", "fifty_k")
 adult
 ```
 ```{r}
 summary(adult)
 ```
 
+Checking if average capital gain is different for Female/Male:
+
+
 ```{r}
-m1 <- lm(age ~ capital_gain, data = adult)
-summary(m1)
-plot(m1)
+# adult %>% 
+#   group_by(sex) %>% 
+#   summarise(record_count = n())
+
+female <- filter(adult, str_detect(sex, 'Female'))
+male <- filter(adult, str_detect(sex, 'Male'))
+
+t.test(capital_gain ~ sex, data=adult) # Unpooled
+t.test(capital_gain ~ sex, var.equal=TRUE, data=adult)   # Pooled
 ```
+
+Looking at the p value which is close to 0, we can reject the null hypothesis.
+We have evidence that suggests that the true difference in means between group Female and group Male is not equal to 0.
+We have evidence to say that there is a difference in the average capital gain of Male and Female
+
+
 
