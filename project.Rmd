@@ -11,12 +11,6 @@ library(dplyr)
 library(tidyverse)
 ```
 
-## R Markdown
-
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
-
 
 ## Load Data
 
@@ -48,5 +42,26 @@ Looking at the p value which is close to 0, we can reject the null hypothesis.
 We have evidence that suggests that the true difference in means between group Female and group Male is not equal to 0.
 We have evidence to say that there is a difference in the average capital gain of Male and Female
 
+```{r}
+t.test(capital_loss ~ sex, data=adult) # Unpooled
+t.test(capital_loss ~ sex, var.equal=TRUE, data=adult)   # Pooled
+```
 
+```{r}
+# adult %>%
+#   group_by(race) %>%
+#   summarise(record_count = n())
 
+anov_race <- aov(capital_gain ~ race, data = adult)
+summary(anov_race)
+anov_race
+
+```
+```{r}
+adult %>%
+  group_by(education) %>%
+  summarise(record_count = n())
+
+summary(aov(capital_gain ~ education, data = adult))
+
+```
