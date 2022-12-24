@@ -65,3 +65,16 @@ adult %>%
 summary(aov(capital_gain ~ education, data = adult))
 
 ```
+
+
+
+```{r}
+real_estate <- read.csv("Real_Estate.csv")
+summary(real_estate)
+ls(real_estate)
+
+histogram(~Y.house.price.of.unit.area, data=real_estate, nint=20)     #
+xyplot(Y.house.price.of.unit.area ~ X3.distance.to.the.nearest.MRT.station,data=real_estate)  # negative trend
+m1 <- lm(Y.house.price.of.unit.area ~ X3.distance.to.the.nearest.MRT.station, data=real_estate)
+summary(m1)
+```
