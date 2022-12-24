@@ -73,9 +73,36 @@ real_estate <- read.csv("Real_Estate.csv")
 summary(real_estate)
 ls(real_estate)
 
-histogram(~Y.house.price.of.unit.area, data=real_estate, nint=20)     #
-xyplot(Y.house.price.of.unit.area ~ X4.number.of.convenience.stores,data=real_estate)  # positive trend
-xyplot(Y.house.price.of.unit.area ~ X3.distance.to.the.nearest.MRT.station,data=real_estate)  # negative trend
+
+#xyplot(Y.house.price.of.unit.area ~ X4.number.of.convenience.stores,data=real_estate)  # positive trend
+#xyplot(Y.house.price.of.unit.area ~ X3.distance.to.the.nearest.MRT.station,data=real_estate)  # negative trend
+
+
+# study with distance to metro station.
+
+#check value distribution.
+histogram(~Y.house.price.of.unit.area, data=real_estate, nint=20)     
+
+```
+```{r}
+#check correlation between house price and distance to metro station.
+cor(Y.house.price.of.unit.area ~ X3.distance.to.the.nearest.MRT.station, data=real_estate) # -0.673
+
+#the least squares line  regression line.
 m1 <- lm(Y.house.price.of.unit.area ~ X3.distance.to.the.nearest.MRT.station, data=real_estate)
 summary(m1)
+
+
+#xy plot
+xyplot(Y.house.price.of.unit.area ~ X3.distance.to.the.nearest.MRT.station,data=real_estate,type=c("p","r"))  # negative
+```
+
+
+
+
+```{r}
+#normalty check of errors/residual and assumptions check *
+
+histogram(residuals(m1),width=50)
+ladd(panel.qqmathline(resid(m1)))
 ```
