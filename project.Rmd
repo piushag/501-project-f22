@@ -7,7 +7,6 @@ date: "2022-12-18"
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 library(rlang)
-sessionInfo()
 library(mosaic)
 library(dplyr)
 library(tidyverse)
@@ -86,6 +85,51 @@ Since the p-value in our ANOVA table (0.00132) is less than .05, we have suffici
 This means we have sufficient evidence to say that the mean capital gain is not equal across different races.
 
 From the plots, we can see that the maximum average capital gain is in the race Asian-Pac-Islander.
+
+
+# Checking if average capital gain differs by Occupation
+```{r}
+anov_occ <- aov(capital_gain ~ occupation, data = adult)
+summary(anov_occ)
+anov_occ
+
+gain_occ<-adult %>%
+  group_by(occupation) %>%
+  summarize(avg_captital_gain=mean(capital_gain))
+gain_occ
+gain_occupation %>%
+  ggplot(aes(x=occupation, y=avg_captital_gain,fill=avg_captital_gain))+
+  geom_tile(color="white",size=0.3)+
+  scale_fill_gradient(low="blue",high="red")
+
+```
+Since the p-value in our ANOVA table (10^-16) is less than .05, we have sufficient evidence to reject the null hypothesis.
+
+This means we have sufficient evidence to say that the mean capital gain is not equal across different occupation.
+
+From the plots, we can see that the maximum average capital gain is in the occupation of Exec-managerial.
+
+# Checking if average capital gain differs by Occupation
+```{r}
+anov_wc <- aov(capital_gain ~ workclass, data = adult)
+summary(anov_wc)
+anov_wc
+
+gain_wc<-adult %>%
+  group_by(workclass) %>%
+  summarize(avg_captital_gain=mean(capital_gain))
+gain_wc
+gain_wc %>%
+  ggplot(aes(x=workclass, y=avg_captital_gain,fill=avg_captital_gain))+
+  geom_tile(color="white",size=0.3)+
+  scale_fill_gradient(low="blue",high="red")
+
+```
+Since the p-value in our ANOVA table (10^-16) is less than .05, we have sufficient evidence to reject the null hypothesis.
+
+This means we have sufficient evidence to say that the mean capital gain is not equal across different workclass.
+
+From the plots, we can see that the maximum average capital gain is in the occupation of Self-emp-inc.
 
 # Checking if average capital gain differs by education level
 
