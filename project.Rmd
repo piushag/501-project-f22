@@ -187,7 +187,7 @@ m2 <- lm(Y.house.price.of.unit.area ~  X4.number.of.convenience.stores,  data=re
 summary(m2)
 ```
 ```{r}
-ggplot(real_estate, aes( X4.number.of.convenience.stores, Y.house.price.of.unit.area)) + geom_point() + stat_smooth(method = lm)
+ggplot(real_estate, aes( X2.house.age, Y.house.price.of.unit.area)) + geom_point() + stat_smooth(method = lm)
 ```
 ```{r}
 histogram(residuals(m2),width=50)
