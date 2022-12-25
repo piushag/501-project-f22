@@ -12,7 +12,6 @@ library(dplyr)
 library(tidyverse)
 ```
 
-
 ## Load Data
 
 ```{r}
@@ -20,12 +19,12 @@ adult <- read.table("adult.data", sep = ",")
 colnames(adult) <- c("age", "workclass", "fnlwgt", "education", "education_num", "marital_status", "occupation", "relationship", "race", "sex", "capital_gain", "capital_loss", "hours_per_week", "native_country", "fifty_k")
 adult
 ```
+
 ```{r}
 summary(adult)
 ```
 
 # Test to check if average capital gain is different for Female/Male:
-
 
 ```{r}
 # adult %>% 
@@ -45,14 +44,12 @@ gain_sex<-adult %>%
 gain_sex %>%
   ggplot(aes(x=sex, y=avg_captital_gain,fill=avg_captital_gain))+
   geom_tile(color="white",size=0.3)+
-  scale_fill_gradient(low="blue",high="red")
+  scale_fill_gradient(low="pink",high="purple")
 
 
 ```
 
-Looking at the p value which is close to 0, we can reject the null hypothesis.
-We have evidence that suggests that the true difference in means between group Female and group Male is not equal to 0.
-We have evidence to say that there is a difference in the average capital gain of Male and Female
+Looking at the p value which is close to 0, we can reject the null hypothesis. We have evidence that suggests that the true difference in means between group Female and group Male is not equal to 0. We have evidence to say that there is a difference in the average capital gain of Male and Female
 
 ```{r}
 t.test(capital_loss ~ sex, data=adult) # Unpooled
@@ -80,6 +77,7 @@ gain_race %>%
   scale_fill_gradient(low="blue",high="red")
 
 ```
+
 Since the p-value in our ANOVA table (0.00132) is less than .05, we have sufficient evidence to reject the null hypothesis.
 
 This means we have sufficient evidence to say that the mean capital gain is not equal across different races.
@@ -133,7 +131,6 @@ From the plots, we can see that the maximum average capital gain is in the occup
 
 # Checking if average capital gain differs by education level
 
-
 ```{r fig.width=10, fig.height=4}
 # adult %>%
 #   group_by(education) %>%
@@ -148,10 +145,22 @@ gain_edu<-adult %>%
   summarize(avg_captital_gain=mean(capital_gain))
 
 gain_edu %>%
-  ggplot(aes(x=education, y=avg_captital_gain,fill=avg_captital_gain))+
-  geom_tile(color="white",size=0.3)+
-  scale_fill_gradient(low="blue",high="red")
+  ggplot(aes(x=education, y=avg_captital_gain))+
+  geom_tile(color="purple",size=1)
 
+#Checking for education number
+
+anov_edu_num <- aov(capital_gain ~ education_num, data = adult)
+# summary(anov_edu_num)
+# anov_edu_num
+
+gain_edu_num<-adult %>%
+  group_by(education_num) %>%
+  summarize(avg_captital_gain=mean(capital_gain))
+
+gain_edu_num %>%
+  ggplot(aes(x=education_num, y=avg_captital_gain))+
+  geom_tile(color="blue",size=1)
 ```
 
 Since the p-value in our ANOVA table is less than .05, we have sufficient evidence to reject the null hypothesis.
@@ -170,8 +179,78 @@ education_sex<-adult %>%
 education_sex %>%
   ggplot(aes(x=sex,y=education,fill=avg_captital_gain))+
   geom_tile(color="white",size=0.3)+
-  scale_fill_gradient(low="blue",high="red")
+  scale_fill_gradient(low="pink",high="purple")
 ```
+
+# Plotting gain on race and sex
+
+```{r}
+race_sex<-adult %>%
+  group_by(sex, race) %>%
+  summarize(avg_captital_gain=mean(capital_gain))
+
+race_sex %>%
+  ggplot(aes(x=sex,y=race,fill=avg_captital_gain))+
+  geom_tile(color="white",size=0.3)+
+  scale_fill_gradient(low="pink",high="purple")
+
+```
+
+# Average capital gain vs earning greater than or less than or equal to 50k.
+
+```{r}
+# adult %>%
+#   group_by(fifty_k) %>%
+#   summarise(record_count = n())
+
+
+t.test(capital_gain ~ fifty_k, data=adult) # Unpooled
+t.test(capital_gain ~ fifty_k, var.equal=TRUE, data=adult)   # Pooled
+
+gain_fifty<-adult %>%
+  group_by(fifty_k) %>%
+  summarize(avg_captital_gain=mean(capital_gain))
+
+gain_fifty %>%
+  ggplot(aes(x=fifty_k, y=avg_captital_gain,fill=avg_captital_gain))+
+  geom_tile(color="white",size=0.3)+
+  scale_fill_gradient(low="pink",high="purple")
+
+
+```
+Looking at the p value which is close to 0, we can reject the null hypothesis. We have evidence that suggests that the true difference in means between group that earns less than or equal to 50k and more than 50 is not equal to 0. We have evidence to say that there is a significant difference in the average capital gain.
+
+
+
+# Checking if average capital gain differs by marital status
+
+```{r fig.width=10, fig.height=4}
+# adult %>%
+#   group_by(race) %>%
+#   summarise(record_count = n())
+
+anov_race <- aov(capital_gain ~ marital_status, data = adult)
+summary(anov_race)
+anov_race
+
+gain_marital<-adult %>%
+  group_by(marital_status) %>%
+  summarize(avg_captital_gain=mean(capital_gain))
+
+gain_marital %>%
+  ggplot(aes(x=marital_status, y=avg_captital_gain,fill=avg_captital_gain))+
+  geom_tile(color="white",size=0.3)+
+  scale_fill_gradient(low="blue",high="red")
+
+```
+
+Since the p-value in our ANOVA table is less than .05, we have sufficient evidence to reject the null hypothesis.
+
+This means we have sufficient evidence to say that the mean capital gain is not equal across different marital-status.
+
+From the plots, we can see that the maximum average capital gain is with married-civ-spouse.
+
+
 
 # Real Estate data set
 
@@ -191,10 +270,10 @@ ls(real_estate)
 histogram(~Y.house.price.of.unit.area, data=real_estate, nint=20)     
 
 ```
+
 ```{r}
 pairs(real_estate[,2:8], pch=19)
 ```
-
 
 ```{r}
 #check correlation between house price and distance to metro station.
@@ -209,9 +288,6 @@ summary(m1)
 xyplot(Y.house.price.of.unit.area ~ X3.distance.to.the.nearest.MRT.station,data=real_estate,type=c("p","r"))  # negative
 ```
 
-
-
-
 ```{r}
 #normalty check of errors/residual and assumptions check *
 
@@ -223,16 +299,17 @@ qqnorm(resid(m1))
 qqline(resid(m1))
 ```
 
-
 New analysis:
 
 ```{r}
 m2 <- lm(Y.house.price.of.unit.area ~  X4.number.of.convenience.stores,  data=real_estate)
 summary(m2)
 ```
+
 ```{r}
 ggplot(real_estate, aes( X2.house.age, Y.house.price.of.unit.area)) + geom_point() + stat_smooth(method = lm)
 ```
+
 ```{r}
 histogram(residuals(m2),width=50)
 ladd(panel.qqmathline(resid(m2)))
@@ -241,4 +318,3 @@ plot(density(resid(m2)))
 qqnorm(resid(m2))
 qqline(resid(m2))
 ```
-
