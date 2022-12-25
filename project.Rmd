@@ -23,7 +23,7 @@ adult
 summary(adult)
 ```
 
-Checking if average capital gain is different for Female/Male:
+# Test to check if average capital gain is different for Female/Male:
 
 
 ```{r}
@@ -36,6 +36,17 @@ male <- filter(adult, str_detect(sex, 'Male'))
 
 t.test(capital_gain ~ sex, data=adult) # Unpooled
 t.test(capital_gain ~ sex, var.equal=TRUE, data=adult)   # Pooled
+
+gain_sex<-adult %>%
+  group_by(sex) %>%
+  summarize(avg_captital_gain=mean(capital_gain))
+
+gain_sex %>%
+  ggplot(aes(x=sex, y=avg_captital_gain,fill=avg_captital_gain))+
+  geom_tile(color="white",size=0.3)+
+  scale_fill_gradient(low="blue",high="red")
+
+
 ```
 
 Looking at the p value which is close to 0, we can reject the null hypothesis.
@@ -44,8 +55,10 @@ We have evidence to say that there is a difference in the average capital gain o
 
 ```{r}
 t.test(capital_loss ~ sex, data=adult) # Unpooled
-t.test(capital_loss ~ sex, var.equal=TRUE, data=adult)   # Pooled
+t.test(capital_loss ~ sex, var.equal=TRUE, data=adult)  # Pooled
 ```
+
+# Checking if average capital gain differs by race
 
 ```{r}
 # adult %>%
@@ -56,17 +69,65 @@ anov_race <- aov(capital_gain ~ race, data = adult)
 summary(anov_race)
 anov_race
 
+gain_race<-adult %>%
+  group_by(race) %>%
+  summarize(avg_captital_gain=mean(capital_gain))
+
+gain_race %>%
+  ggplot(aes(x=race, y=avg_captital_gain,fill=avg_captital_gain))+
+  geom_tile(color="white",size=0.3)+
+  scale_fill_gradient(low="blue",high="red")
+
 ```
-```{r}
-adult %>%
+Since the p-value in our ANOVA table (0.00132) is less than .05, we have sufficient evidence to reject the null hypothesis.
+
+This means we have sufficient evidence to say that the mean capital gain is not equal across different races.
+
+From the plots, we can see that the maximum average capital gain is in the race Asian-Pac-Islander.
+
+# Checking if average capital gain differs by education level
+
+
+```{r fig.width=10, fig.height=4}
+# adult %>%
+#   group_by(education) %>%
+#   summarise(record_count = n())
+
+anov_edu <- aov(capital_gain ~ education, data = adult)
+summary(anov_edu)
+anov_edu
+
+gain_edu<-adult %>%
   group_by(education) %>%
-  summarise(record_count = n())
+  summarize(avg_captital_gain=mean(capital_gain))
 
-summary(aov(capital_gain ~ education, data = adult))
+gain_edu %>%
+  ggplot(aes(x=education, y=avg_captital_gain,fill=avg_captital_gain))+
+  geom_tile(color="white",size=0.3)+
+  scale_fill_gradient(low="blue",high="red")
 
 ```
 
+Since the p-value in our ANOVA table is less than .05, we have sufficient evidence to reject the null hypothesis.
 
+This means we have sufficient evidence to say that the mean capital gain is not equal across different education levels.
+
+From the plots, we can see that the maximum average capital gain is with the education prof school.
+
+# Plotting gain on education and sex
+
+```{r}
+education_sex<-adult %>%
+  group_by(sex, education) %>%
+  summarize(avg_captital_gain=mean(capital_gain))
+
+education_sex %>%
+  ggplot(aes(x=sex,y=education,fill=avg_captital_gain))+
+  geom_tile(color="white",size=0.3)+
+  scale_fill_gradient(low="blue",high="red")
+```
+
+# Real Estate data set
 
 ```{r}
 real_estate <- read.csv("Real_Estate.csv")
@@ -106,3 +167,12 @@ xyplot(Y.house.price.of.unit.area ~ X3.distance.to.the.nearest.MRT.station,data=
 histogram(residuals(m1),width=50)
 ladd(panel.qqmathline(resid(m1)))
 ```
+
+
+New analysis:
+
+```{r}
+m2 <- lm(Y.house.price.of.unit.area ~  X4.number.of.convenience.stores,  data=real_estate)
+summary(m2)
+```
+
