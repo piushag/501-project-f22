@@ -331,14 +331,17 @@ summary(m2)
 ```
 
 ```{r}
+m3 <- lm(Y.house.price.of.unit.area ~ X2.house.age,  data=real_estate)
+summary(m3)
 ggplot(real_estate, aes( X2.house.age, Y.house.price.of.unit.area)) + geom_point() + stat_smooth(method = lm)
 ```
 
 ```{r}
-histogram(residuals(m2),width=50)
-ladd(panel.qqmathline(resid(m2)))
-plot(resid(m2))
-plot(density(resid(m2)))
-qqnorm(resid(m2))
-qqline(resid(m2))
+histogram(residuals(m3),width=5)
+ladd(panel.qqmathline(resid(m3)))
+plot(resid(m3))
+plot(density(resid(m3)))
+qqnorm(resid(m3))
+qqline(resid(m3))
 ```
+From the above graphs, the relationship between house price and house age is not linear, and from Q_Q plot also, we can see that the residuals are not on a stright lines, so we should not use linear model to predict the house price based on house age. And if we build the model, we can see that the R-squared value is around 4%, which also indicates linear model is not suitable to predict the house price based on house age.
