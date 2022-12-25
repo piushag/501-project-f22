@@ -78,6 +78,9 @@ gain_race %>%
 
 ```
 
+```{r fig.height=10}
+plot(TukeyHSD(aov(capital_gain ~ race, data = adult)))
+```
 Since the p-value in our ANOVA table (0.00132) is less than .05, we have sufficient evidence to reject the null hypothesis.
 
 This means we have sufficient evidence to say that the mean capital gain is not equal across different races.
@@ -86,13 +89,18 @@ From the Tukey Test, we can see that there is a significant difference between t
 
 From the plots, we can see that the maximum average capital gain is in the race Asian-Pac-Islander.
 
-
 # Checking if average capital gain differs by Occupation
+
 ```{r}
 anov_occ <- aov(capital_gain ~ occupation, data = adult)
 summary(anov_occ)
 TukeyHSD(anov_occ)
 ```
+
+```{r fig.height=20}
+plot(TukeyHSD(aov(capital_gain ~ occupation, data = adult)))
+```
+
 ```{r fig.width=10, fig.height=5}
 gain_occupation<-adult %>%
   group_by(occupation) %>%
@@ -103,7 +111,8 @@ gain_occupation %>%
   geom_tile(color="white",size=0.3)+
   scale_fill_gradient(low="blue",high="red")
 ```
-Since the p-value in our ANOVA table (10^-16) is less than .05, we have sufficient evidence to reject the null hypothesis.
+
+Since the p-value in our ANOVA table (10\^-16) is less than .05, we have sufficient evidence to reject the null hypothesis.
 
 This means we have sufficient evidence to say that the mean capital gain is not equal across different occupation.
 
@@ -112,12 +121,15 @@ From the Tukey test, we can see the p-values for different occupation pairs, and
 From the plots, we can see that the maximum average capital gain is in the occupation of Exec-managerial.
 
 # Checking if average capital gain differs by Workclass
+
 ```{r}
 anov_wc <- aov(capital_gain ~ workclass, data = adult)
 summary(anov_wc)
 TukeyHSD(anov_wc)
 ```
-
+```{r fig.height=20}
+plot(TukeyHSD(aov(capital_gain ~ workclass, data = adult)))
+```
 ```{r fig.width=10, fig.height=5}
 gain_wc<-adult %>%
   group_by(workclass) %>%
@@ -129,7 +141,8 @@ gain_wc %>%
   scale_fill_gradient(low="blue",high="red")
 
 ```
-Since the p-value in our ANOVA table (10^-16) is less than .05, we have sufficient evidence to reject the null hypothesis.
+
+Since the p-value in our ANOVA table (10\^-16) is less than .05, we have sufficient evidence to reject the null hypothesis.
 
 This means we have sufficient evidence to say that the mean capital gain is not equal across different workclass.
 
@@ -147,6 +160,10 @@ From the plots, we can see that the maximum average capital gain is in the occup
 anov_edu <- aov(capital_gain ~ education, data = adult)
 summary(anov_edu)
 TukeyHSD(anov_edu)
+```
+
+```{r fig.height=10}
+plot(TukeyHSD(aov(capital_gain ~ education, data = adult)))
 ```
 
 ```{r fig.width=10, fig.height=5}
@@ -234,13 +251,12 @@ gain_fifty %>%
 
 
 ```
-Looking at the p value which is close to 0, we can reject the null hypothesis. 
 
-We have evidence that suggests that the true difference in means between group that earns less than or equal to 50k and more than 50 is not equal to 0. 
+Looking at the p value which is close to 0, we can reject the null hypothesis.
+
+We have evidence that suggests that the true difference in means between group that earns less than or equal to 50k and more than 50 is not equal to 0.
 
 We have evidence to say that there is a significant difference in the average capital gain.
-
-
 
 # Checking if average capital gain differs by marital status
 
@@ -252,6 +268,10 @@ We have evidence to say that there is a significant difference in the average ca
 anov_race <- aov(capital_gain ~ marital_status, data = adult)
 summary(anov_race)
 TukeyHSD(anov_race)
+```
+
+```{r fig.height=10}
+plot(TukeyHSD(aov(capital_gain ~ marital_status, data = adult)))
 ```
 
 ```{r fig.width=10, fig.height=4}
@@ -273,8 +293,6 @@ This means we have sufficient evidence to say that the mean capital gain is not 
 From the Tukey test, we can see the p-values for different marital status pairs, and the difference in average capital gain.
 
 From the plots, we can see that the maximum average capital gain is with married-civ-spouse.
-
-
 
 # Real Estate data set
 
