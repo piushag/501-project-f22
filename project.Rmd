@@ -65,7 +65,7 @@ t.test(capital_loss ~ sex, var.equal=TRUE, data=adult)  # Pooled
 
 anov_race <- aov(capital_gain ~ race, data = adult)
 summary(anov_race)
-anov_race
+TukeyHSD(anov_race) 
 
 gain_race<-adult %>%
   group_by(race) %>%
@@ -82,6 +82,8 @@ Since the p-value in our ANOVA table (0.00132) is less than .05, we have suffici
 
 This means we have sufficient evidence to say that the mean capital gain is not equal across different races.
 
+From the Tukey Test, we can see that there is a significant difference between the means for Black- Asian-Pac-Islander and White- Black, and the p values are below the significance level.
+
 From the plots, we can see that the maximum average capital gain is in the race Asian-Pac-Islander.
 
 
@@ -89,34 +91,38 @@ From the plots, we can see that the maximum average capital gain is in the race 
 ```{r}
 anov_occ <- aov(capital_gain ~ occupation, data = adult)
 summary(anov_occ)
-anov_occ
-
-gain_occ<-adult %>%
+TukeyHSD(anov_occ)
+```
+```{r fig.width=10, fig.height=5}
+gain_occupation<-adult %>%
   group_by(occupation) %>%
   summarize(avg_captital_gain=mean(capital_gain))
-gain_occ
+
 gain_occupation %>%
   ggplot(aes(x=occupation, y=avg_captital_gain,fill=avg_captital_gain))+
   geom_tile(color="white",size=0.3)+
   scale_fill_gradient(low="blue",high="red")
-
 ```
 Since the p-value in our ANOVA table (10^-16) is less than .05, we have sufficient evidence to reject the null hypothesis.
 
 This means we have sufficient evidence to say that the mean capital gain is not equal across different occupation.
 
+From the Tukey test, we can see the p-values for different occupation pairs, and the difference in average capital gain.
+
 From the plots, we can see that the maximum average capital gain is in the occupation of Exec-managerial.
 
-# Checking if average capital gain differs by Occupation
+# Checking if average capital gain differs by Workclass
 ```{r}
 anov_wc <- aov(capital_gain ~ workclass, data = adult)
 summary(anov_wc)
-anov_wc
+TukeyHSD(anov_wc)
+```
 
+```{r fig.width=10, fig.height=5}
 gain_wc<-adult %>%
   group_by(workclass) %>%
   summarize(avg_captital_gain=mean(capital_gain))
-gain_wc
+
 gain_wc %>%
   ggplot(aes(x=workclass, y=avg_captital_gain,fill=avg_captital_gain))+
   geom_tile(color="white",size=0.3)+
@@ -127,18 +133,23 @@ Since the p-value in our ANOVA table (10^-16) is less than .05, we have sufficie
 
 This means we have sufficient evidence to say that the mean capital gain is not equal across different workclass.
 
+From the Tukey test, we can see the p-values for different occupation pairs, and the difference in average capital gain.
+
 From the plots, we can see that the maximum average capital gain is in the occupation of Self-emp-inc.
 
 # Checking if average capital gain differs by education level
 
-```{r fig.width=10, fig.height=4}
+```{r}
 # adult %>%
 #   group_by(education) %>%
 #   summarise(record_count = n())
 
 anov_edu <- aov(capital_gain ~ education, data = adult)
 summary(anov_edu)
-anov_edu
+TukeyHSD(anov_edu)
+```
+
+```{r fig.width=10, fig.height=5}
 
 gain_edu<-adult %>%
   group_by(education) %>%
@@ -148,6 +159,9 @@ gain_edu %>%
   ggplot(aes(x=education, y=avg_captital_gain))+
   geom_tile(color="purple",size=1)
 
+```
+
+```{r}
 #Checking for education number
 
 anov_edu_num <- aov(capital_gain ~ education_num, data = adult)
@@ -166,6 +180,8 @@ gain_edu_num %>%
 Since the p-value in our ANOVA table is less than .05, we have sufficient evidence to reject the null hypothesis.
 
 This means we have sufficient evidence to say that the mean capital gain is not equal across different education levels.
+
+From the Tukey test, we can see the p-values for different education pairs, and the difference in average capital gain.
 
 From the plots, we can see that the maximum average capital gain is with the education prof school.
 
@@ -218,21 +234,27 @@ gain_fifty %>%
 
 
 ```
-Looking at the p value which is close to 0, we can reject the null hypothesis. We have evidence that suggests that the true difference in means between group that earns less than or equal to 50k and more than 50 is not equal to 0. We have evidence to say that there is a significant difference in the average capital gain.
+Looking at the p value which is close to 0, we can reject the null hypothesis. 
+
+We have evidence that suggests that the true difference in means between group that earns less than or equal to 50k and more than 50 is not equal to 0. 
+
+We have evidence to say that there is a significant difference in the average capital gain.
 
 
 
 # Checking if average capital gain differs by marital status
 
-```{r fig.width=10, fig.height=4}
+```{r}
 # adult %>%
 #   group_by(race) %>%
 #   summarise(record_count = n())
 
 anov_race <- aov(capital_gain ~ marital_status, data = adult)
 summary(anov_race)
-anov_race
+TukeyHSD(anov_race)
+```
 
+```{r fig.width=10, fig.height=4}
 gain_marital<-adult %>%
   group_by(marital_status) %>%
   summarize(avg_captital_gain=mean(capital_gain))
@@ -247,6 +269,8 @@ gain_marital %>%
 Since the p-value in our ANOVA table is less than .05, we have sufficient evidence to reject the null hypothesis.
 
 This means we have sufficient evidence to say that the mean capital gain is not equal across different marital-status.
+
+From the Tukey test, we can see the p-values for different marital status pairs, and the difference in average capital gain.
 
 From the plots, we can see that the maximum average capital gain is with married-civ-spouse.
 
