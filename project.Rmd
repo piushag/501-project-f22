@@ -22,7 +22,7 @@ library(tidyverse)
 
 
 
-# Introduction and Data Background -
+# Introduction and data Background
 
 This data was extracted by Barry Becker from the 1994 Census database.
 
@@ -42,7 +42,7 @@ Description of fnlwgt (final weight):
 
 The weights on the CPS files are controlled to independent estimates of the civilian non institutional population of the US.  These are prepared monthly for us by Population Division here at the Census Bureau.
 
-## Attribute Information:
+## Attribute Information
 
 Parameters -
 
@@ -76,7 +76,7 @@ native_country: country of origin for an individual
 
 NOTE: Some values in the dataset is marked as "?". It means the value is unknown.
 
-## Loading the Data
+## Loading the data
 
 ```{r}
 adult <- read.table("adult.data", sep = ",")
@@ -87,9 +87,9 @@ colnames(adult) <- c("age", "workclass", "fnlwgt", "education", "education_num",
 summary(adult)
 ```
 
-# Test to check if average capital gain is different for Female/Male:
+# Testing realtionship between capital gain and sex
 
-Motivation: we want to find out if the capital gain differs based on gender.
+Motivation: we want to find out if the capital gain differs based on sex.
 
 Assumptions:
 
@@ -142,7 +142,7 @@ t.test(capital_loss ~ sex, data=adult) # Unpooled
 t.test(capital_loss ~ sex, var.equal=TRUE, data=adult)  # Pooled
 ```
 
-# Checking if average capital gain differs by race
+# Testing relationship between capital gain and race
 
 Motivation: we want to find out if the capital gain differs based on race.
 
@@ -197,7 +197,7 @@ From the Tukey Test, we can see that there is a significant difference between t
 From the plots, we can see that the maximum average capital gain is in the race Asian-Pac-Islander.
 
 
-# Checking if average capital gain differs by occupation
+# Testing relationship between capital gain and occupation
 
 Motivation: we want to find out if the capital gain differs based on occupation.
 
@@ -246,7 +246,7 @@ From the Tukey test, we can see the p-values for different occupation pairs, and
 
 From the plots, we can see that the maximum average capital gain is in the occupation of Exec-managerial.
 
-# Checking if average capital gain differs by workclass
+# Testing relationship between capital gain and workclass
 
 Motivation: we want to find out if the capital gain differs based on workclass.
 
@@ -294,7 +294,7 @@ From the Tukey test, we can see the p-values for different occupation pairs, and
 
 From the plots, we can see that the maximum average capital gain is in the occupation of Self-emp-inc.
 
-# Checking if average capital gain differs by education level
+# Testing relationship between capital gain and education level
 
 Motivation: we want to find out if the capital gain differs based on education level.
 
@@ -364,7 +364,7 @@ From the Tukey test, we can see the p-values for different education pairs, and 
 
 From the plots, we can see that the maximum average capital gain is with the education prof school.
 
-# Plotting gain on education and sex
+# Plotting capital gain on education and sex
 
 ```{r}
 education_sex<-adult %>%
@@ -377,7 +377,7 @@ education_sex %>%
   scale_fill_gradient(low="pink",high="purple")
 ```
 
-# Plotting gain on race and sex
+# Plotting capital gain on race and sex
 
 ```{r}
 race_sex<-adult %>%
@@ -391,7 +391,7 @@ race_sex %>%
 
 ```
 
-# Average capital gain vs earning greater than or less than or equal to 50k.
+# Average capital gain vs earning greater than or less than or equal to 50k
 
 ```{r}
 # adult %>%
@@ -420,7 +420,7 @@ We have evidence that suggests that the true difference in means between group t
 
 We have evidence to say that there is a significant difference in the average capital gain.
 
-# Checking if average capital gain differs by marital status
+# Testing relationship between capital gain and marital status
 
 ```{r}
 # adult %>%
@@ -456,7 +456,7 @@ From the Tukey test, we can see the p-values for different marital status pairs,
 
 From the plots, we can see that the maximum average capital gain is with married-civ-spouse.
 
-# Checking if average capital gain differs by native country
+# Testing relationship between capital gain and native country
 
 Motivation: we want to find out if the capital gain differs based on native country.
 
@@ -499,22 +499,37 @@ This means we do not have sufficient evidence to say that the mean capital gain 
 
 From the plots, we can see that the maximum average capital gain is for native country India.
 
-#Linear Regression on Census Data
+# Linear Regression on Census Data
+
 ```{r}
 xyplot(capital_gain ~ age, data=adult)
 ```
-As from initial plot, we can see that capital gain and age not in linear relationship, there is no point to fit a linear model with the data.
+As from initial plot, we can see that capital gain and age not in linear relationship, there is no point to fit a linear model with the data. 
 
-# Real Estate data set: Real_Estate
+We checked if linear regression can be used for any of the numerical attributes vs capital gain, but we noticed no significant information that points to a linear relationship, hence we did not use any linear models.
 
-Attributes:
+# Real Estate data set
+
+## Introduction
+We performed analysis on an additional real estate data set since we found it interesting.
+
+### Attributes:
+
 transaction date: Date of transaction
+
 House age
+
 Distance to nearest metro station
+
 Number of convenience stores
+
 Latitude 
+
 Longitude
+
 Price of house per area
+
+### Loading the data
 
 ```{r}
 real_estate <- read.csv("Real_Estate.csv")
@@ -526,7 +541,6 @@ pairs(real_estate[,2:8], pch=19)
 #xyplot(Y.house.price.of.unit.area ~ X4.number.of.convenience.stores,data=real_estate)  # positive trend
 #xyplot(Y.house.price.of.unit.area ~ X3.distance.to.the.nearest.MRT.station,data=real_estate)  # negative trend
 
-
 # study with distance to metro station.
 
 #check value distribution.
@@ -534,7 +548,7 @@ histogram(~Y.house.price.of.unit.area, data=real_estate, nint=20)
 
 ```
 
-
+## Testing if house price varies with distance to metro station
 
 ```{r}
 #check correlation between house price and distance to metro station.
@@ -548,6 +562,7 @@ summary(m1)
 #xy plot
 xyplot(Y.house.price.of.unit.area ~ X3.distance.to.the.nearest.MRT.station,data=real_estate,type=c("p","r"))  # negative
 ```
+
 Assumption Check:
 
 1. Residual are uniformly distributed around y=0 horizontal line.
@@ -568,11 +583,12 @@ plot(density(resid(m1)))
 qqnorm(resid(m1))
 qqline(resid(m1))
 ```
+
 Conclusion:
 
 All assuptions holds here. From differnt graphs we can see that the conditions for linear model fitting holds. 
 
-#Checking if house price varies with number of convenience stores:
+## Testing if house price varies with number of convenience stores
 
 ```{r}
 m2 <- lm(Y.house.price.of.unit.area ~  X4.number.of.convenience.stores,  data=real_estate)

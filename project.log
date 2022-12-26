@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.9.6)  25 DEC 2022 23:41
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.9.6)  26 DEC 2022 00:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -536,14 +536,13 @@ Overfull \hbox (91.99335pt too wide) in paragraph at lines 286--286
 roup  Female and group  Male is not equal to 0[] 
  []
 
-
+[3]
 Overfull \hbox (91.99335pt too wide) in paragraph at lines 306--306
 []\T1/lmtt/m/n/10 ## alternative hypothesis: true difference in means between g
 roup  Female and group  Male is not equal to 0[] 
  []
 
-[3]
-<project_files/figure-latex/unnamed-chunk-3-1.pdf, id=66, 453.695pt x 313.17pt>
+<project_files/figure-latex/unnamed-chunk-3-1.pdf, id=78, 453.695pt x 313.17pt>
 
 File: project_files/figure-latex/unnamed-chunk-3-1.pdf Graphic file (type pdf)
 <use project_files/figure-latex/unnamed-chunk-3-1.pdf>
@@ -568,14 +567,15 @@ roup  Female and group  Male is not equal to 0[]
  []
 
 [5]
-<project_files/figure-latex/unnamed-chunk-6-1.pdf, id=88, 706.64pt x 313.17pt>
+<project_files/figure-latex/unnamed-chunk-6-1.pdf, id=100, 706.64pt x 313.17pt>
+
 File: project_files/figure-latex/unnamed-chunk-6-1.pdf Graphic file (type pdf)
 <use project_files/figure-latex/unnamed-chunk-6-1.pdf>
 Package pdftex.def Info: project_files/figure-latex/unnamed-chunk-6-1.pdf  used
  on input line 438.
 (pdftex.def)             Requested size: 469.75874pt x 208.18852pt.
-<project_files/figure-latex/unnamed-chunk-7-1.pdf, id=89, 408.52625pt x 689.576
-25pt>
+<project_files/figure-latex/unnamed-chunk-7-1.pdf, id=101, 408.52625pt x 689.57
+625pt>
 File: project_files/figure-latex/unnamed-chunk-7-1.pdf Graphic file (type pdf)
 <use project_files/figure-latex/unnamed-chunk-7-1.pdf>
 Package pdftex.def Info: project_files/figure-latex/unnamed-chunk-7-1.pdf  used
@@ -583,7 +583,7 @@ Package pdftex.def Info: project_files/figure-latex/unnamed-chunk-7-1.pdf  used
 (pdftex.def)             Requested size: 385.33626pt x 650.43243pt.
 [6 <./project_files/figure-latex/unnamed-chunk-6-1.pdf>] [7 <./project_files/fi
 gure-latex/unnamed-chunk-7-1.pdf>]
-<project_files/figure-latex/unnamed-chunk-9-1.pdf, id=115, 408.52625pt x 1414.2
+<project_files/figure-latex/unnamed-chunk-9-1.pdf, id=127, 408.52625pt x 1414.2
 8375pt>
 File: project_files/figure-latex/unnamed-chunk-9-1.pdf Graphic file (type pdf)
 <use project_files/figure-latex/unnamed-chunk-9-1.pdf>
@@ -591,7 +591,7 @@ Package pdftex.def Info: project_files/figure-latex/unnamed-chunk-9-1.pdf  used
  on input line 516.
 (pdftex.def)             Requested size: 187.88072pt x 650.42737pt.
 [8] [9 <./project_files/figure-latex/unnamed-chunk-9-1.pdf>]
-<project_files/figure-latex/unnamed-chunk-10-1.pdf, id=137, 1435.3625pt x 351.3
+<project_files/figure-latex/unnamed-chunk-10-1.pdf, id=149, 1435.3625pt x 351.3
 125pt>
 File: project_files/figure-latex/unnamed-chunk-10-1.pdf Graphic file (type pdf)
 
@@ -600,7 +600,7 @@ Package pdftex.def Info: project_files/figure-latex/unnamed-chunk-10-1.pdf  use
 d on input line 530.
 (pdftex.def)             Requested size: 469.75067pt x 114.97392pt.
 [10 <./project_files/figure-latex/unnamed-chunk-10-1.pdf>]
-<project_files/figure-latex/unnamed-chunk-12-1.pdf, id=155, 408.52625pt x 1412.
+<project_files/figure-latex/unnamed-chunk-12-1.pdf, id=167, 408.52625pt x 1412.
 27625pt>
 File: project_files/figure-latex/unnamed-chunk-12-1.pdf Graphic file (type pdf)
 
@@ -609,7 +609,7 @@ Package pdftex.def Info: project_files/figure-latex/unnamed-chunk-12-1.pdf  use
 d on input line 598.
 (pdftex.def)             Requested size: 188.14876pt x 650.43076pt.
 [11] [12 <./project_files/figure-latex/unnamed-chunk-12-1.pdf>]
-<project_files/figure-latex/unnamed-chunk-13-1.pdf, id=172, 712.6625pt x 349.30
+<project_files/figure-latex/unnamed-chunk-13-1.pdf, id=184, 712.6625pt x 349.30
 5pt>
 File: project_files/figure-latex/unnamed-chunk-13-1.pdf Graphic file (type pdf)
 
@@ -618,7 +618,7 @@ Package pdftex.def Info: project_files/figure-latex/unnamed-chunk-13-1.pdf  use
 d on input line 612.
 (pdftex.def)             Requested size: 469.74974pt x 230.24353pt.
 [13 <./project_files/figure-latex/unnamed-chunk-13-1.pdf>]
-<project_files/figure-latex/unnamed-chunk-15-1.pdf, id=190, 408.52625pt x 689.5
+<project_files/figure-latex/unnamed-chunk-15-1.pdf, id=202, 408.52625pt x 689.5
 7625pt>
 File: project_files/figure-latex/unnamed-chunk-15-1.pdf Graphic file (type pdf)
 
@@ -627,7 +627,7 @@ Package pdftex.def Info: project_files/figure-latex/unnamed-chunk-15-1.pdf  use
 d on input line 685.
 (pdftex.def)             Requested size: 385.33626pt x 650.43243pt.
 [14] [15 <./project_files/figure-latex/unnamed-chunk-15-1.pdf>]
-<project_files/figure-latex/unnamed-chunk-16-1.pdf, id=207, 1074.0125pt x 349.3
+<project_files/figure-latex/unnamed-chunk-16-1.pdf, id=219, 1074.0125pt x 349.3
 05pt>
 File: project_files/figure-latex/unnamed-chunk-16-1.pdf Graphic file (type pdf)
 
@@ -635,7 +635,7 @@ File: project_files/figure-latex/unnamed-chunk-16-1.pdf Graphic file (type pdf)
 Package pdftex.def Info: project_files/figure-latex/unnamed-chunk-16-1.pdf  use
 d on input line 699.
 (pdftex.def)             Requested size: 469.7482pt x 152.77791pt.
-<project_files/figure-latex/unnamed-chunk-17-1.pdf, id=208, 459.7175pt x 315.17
+<project_files/figure-latex/unnamed-chunk-17-1.pdf, id=220, 459.7175pt x 315.17
 75pt>
 File: project_files/figure-latex/unnamed-chunk-17-1.pdf Graphic file (type pdf)
 
@@ -644,7 +644,7 @@ Package pdftex.def Info: project_files/figure-latex/unnamed-chunk-17-1.pdf  use
 d on input line 719.
 (pdftex.def)             Requested size: 459.74442pt x 315.19595pt.
 [16 <./project_files/figure-latex/unnamed-chunk-16-1.pdf>]
-<project_files/figure-latex/unnamed-chunk-18-1.pdf, id=220, 453.695pt x 313.17p
+<project_files/figure-latex/unnamed-chunk-18-1.pdf, id=232, 453.695pt x 313.17p
 t>
 File: project_files/figure-latex/unnamed-chunk-18-1.pdf Graphic file (type pdf)
 
@@ -653,7 +653,7 @@ Package pdftex.def Info: project_files/figure-latex/unnamed-chunk-18-1.pdf  use
 d on input line 759.
 (pdftex.def)             Requested size: 453.6939pt x 313.16922pt.
 [17 <./project_files/figure-latex/unnamed-chunk-17-1.pdf>]
-<project_files/figure-latex/unnamed-chunk-19-1.pdf, id=233, 451.6875pt x 313.17
+<project_files/figure-latex/unnamed-chunk-19-1.pdf, id=245, 451.6875pt x 313.17
 pt>
 File: project_files/figure-latex/unnamed-chunk-19-1.pdf Graphic file (type pdf)
 
@@ -673,7 +673,7 @@ Overfull \hbox (86.74336pt too wide) in paragraph at lines 837--837
 roup  <=50K and group  >50K is not equal to 0[] 
  []
 
-<project_files/figure-latex/unnamed-chunk-20-1.pdf, id=261, 453.695pt x 315.177
+<project_files/figure-latex/unnamed-chunk-20-1.pdf, id=273, 453.695pt x 315.177
 5pt>
 File: project_files/figure-latex/unnamed-chunk-20-1.pdf Graphic file (type pdf)
 
@@ -682,7 +682,7 @@ Package pdftex.def Info: project_files/figure-latex/unnamed-chunk-20-1.pdf  use
 d on input line 852.
 (pdftex.def)             Requested size: 453.6939pt x 315.17673pt.
 [20 <./project_files/figure-latex/unnamed-chunk-20-1.pdf>]
-<project_files/figure-latex/unnamed-chunk-22-1.pdf, id=275, 411.5375pt x 691.58
+<project_files/figure-latex/unnamed-chunk-22-1.pdf, id=287, 411.5375pt x 691.58
 376pt>
 File: project_files/figure-latex/unnamed-chunk-22-1.pdf Graphic file (type pdf)
 
@@ -691,7 +691,7 @@ Package pdftex.def Info: project_files/figure-latex/unnamed-chunk-22-1.pdf  use
 d on input line 899.
 (pdftex.def)             Requested size: 387.0588pt x 650.44762pt.
 [21] [22 <./project_files/figure-latex/unnamed-chunk-22-1.pdf>]
-<project_files/figure-latex/unnamed-chunk-23-1.pdf, id=293, 1067.99pt x 279.042
+<project_files/figure-latex/unnamed-chunk-23-1.pdf, id=305, 1067.99pt x 279.042
 5pt>
 File: project_files/figure-latex/unnamed-chunk-23-1.pdf Graphic file (type pdf)
 
@@ -700,7 +700,7 @@ Package pdftex.def Info: project_files/figure-latex/unnamed-chunk-23-1.pdf  use
 d on input line 914.
 (pdftex.def)             Requested size: 469.7541pt x 122.7365pt.
 [23 <./project_files/figure-latex/unnamed-chunk-23-1.pdf>]
-<project_files/figure-latex/unnamed-chunk-24-1.pdf, id=311, 2158.0625pt x 1074.
+<project_files/figure-latex/unnamed-chunk-24-1.pdf, id=323, 2158.0625pt x 1074.
 0125pt>
 File: project_files/figure-latex/unnamed-chunk-24-1.pdf Graphic file (type pdf)
 
@@ -713,170 +713,185 @@ Underfull \hbox (badness 10000) in paragraph at lines 985--988
 [][]
  []
 
-[24 <./project_files/figure-latex/unnamed-chunk-24-1.pdf>]
-<project_files/figure-latex/unnamed-chunk-25-1.pdf, id=324, 419.5675pt x 275.02
-75pt>
+<project_files/figure-latex/unnamed-chunk-25-1.pdf, id=324, 436.63126pt x 282.0
+5376pt>
 File: project_files/figure-latex/unnamed-chunk-25-1.pdf Graphic file (type pdf)
 
 <use project_files/figure-latex/unnamed-chunk-25-1.pdf>
 Package pdftex.def Info: project_files/figure-latex/unnamed-chunk-25-1.pdf  use
-d on input line 1053.
-(pdftex.def)             Requested size: 419.56647pt x 275.02682pt.
-<project_files/figure-latex/unnamed-chunk-25-2.pdf, id=325, 436.63126pt x 282.0
-5376pt>
-File: project_files/figure-latex/unnamed-chunk-25-2.pdf Graphic file (type pdf)
-
-<use project_files/figure-latex/unnamed-chunk-25-2.pdf>
-Package pdftex.def Info: project_files/figure-latex/unnamed-chunk-25-2.pdf  use
-d on input line 1068.
+d on input line 1005.
 (pdftex.def)             Requested size: 436.63019pt x 282.05305pt.
-[25 <./project_files/figure-latex/unnamed-chunk-25-1.pdf>] [26 <./project_files
-/figure-latex/unnamed-chunk-25-2.pdf>]
-<project_files/figure-latex/unnamed-chunk-26-1.pdf, id=349, 436.63126pt x 280.0
-4625pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 1005--1008
+[][] \T1/lmr/m/n/10 (+20) As
+ []
+
+[24 <./project_files/figure-latex/unnamed-chunk-24-1.pdf>] [25 <./project_files
+/figure-latex/unnamed-chunk-25-1.pdf>]
+<project_files/figure-latex/unnamed-chunk-26-1.pdf, id=353, 419.5675pt x 275.02
+75pt>
 File: project_files/figure-latex/unnamed-chunk-26-1.pdf Graphic file (type pdf)
 
 <use project_files/figure-latex/unnamed-chunk-26-1.pdf>
 Package pdftex.def Info: project_files/figure-latex/unnamed-chunk-26-1.pdf  use
-d on input line 1121.
-(pdftex.def)             Requested size: 436.63019pt x 280.04555pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 1121--1123
-[][] \T1/lmr/m/n/10 (+20) As-
- []
-
-<project_files/figure-latex/unnamed-chunk-27-1.pdf, id=350, 436.63126pt x 282.0
+d on input line 1097.
+(pdftex.def)             Requested size: 419.56647pt x 275.02682pt.
+[26]
+<project_files/figure-latex/unnamed-chunk-26-2.pdf, id=358, 436.63126pt x 282.0
 5376pt>
+File: project_files/figure-latex/unnamed-chunk-26-2.pdf Graphic file (type pdf)
+
+<use project_files/figure-latex/unnamed-chunk-26-2.pdf>
+Package pdftex.def Info: project_files/figure-latex/unnamed-chunk-26-2.pdf  use
+d on input line 1111.
+(pdftex.def)             Requested size: 436.63019pt x 282.05305pt.
+[27 <./project_files/figure-latex/unnamed-chunk-26-1.pdf>] [28 <./project_files
+/figure-latex/unnamed-chunk-26-2.pdf>]
+<project_files/figure-latex/unnamed-chunk-27-1.pdf, id=382, 436.63126pt x 280.0
+4625pt>
 File: project_files/figure-latex/unnamed-chunk-27-1.pdf Graphic file (type pdf)
 
 <use project_files/figure-latex/unnamed-chunk-27-1.pdf>
 Package pdftex.def Info: project_files/figure-latex/unnamed-chunk-27-1.pdf  use
-d on input line 1143.
-(pdftex.def)             Requested size: 436.63019pt x 282.05305pt.
-[27 <./project_files/figure-latex/unnamed-chunk-26-1.pdf>]
-<project_files/figure-latex/unnamed-chunk-27-2.pdf, id=366, 436.63126pt x 282.0
-5376pt>
-File: project_files/figure-latex/unnamed-chunk-27-2.pdf Graphic file (type pdf)
+d on input line 1168.
+(pdftex.def)             Requested size: 436.63019pt x 280.04555pt.
 
-<use project_files/figure-latex/unnamed-chunk-27-2.pdf>
-Package pdftex.def Info: project_files/figure-latex/unnamed-chunk-27-2.pdf  use
-d on input line 1151.
-(pdftex.def)             Requested size: 436.63019pt x 282.05305pt.
-<project_files/figure-latex/unnamed-chunk-27-3.pdf, id=367, 436.63126pt x 282.0
-5376pt>
-File: project_files/figure-latex/unnamed-chunk-27-3.pdf Graphic file (type pdf)
+Underfull \hbox (badness 10000) in paragraph at lines 1168--1170
+[][] \T1/lmr/m/n/10 (+20) As-
+ []
 
-<use project_files/figure-latex/unnamed-chunk-27-3.pdf>
-Package pdftex.def Info: project_files/figure-latex/unnamed-chunk-27-3.pdf  use
-d on input line 1159.
+<project_files/figure-latex/unnamed-chunk-28-1.pdf, id=383, 436.63126pt x 282.0
+5376pt>
+File: project_files/figure-latex/unnamed-chunk-28-1.pdf Graphic file (type pdf)
+
+<use project_files/figure-latex/unnamed-chunk-28-1.pdf>
+Package pdftex.def Info: project_files/figure-latex/unnamed-chunk-28-1.pdf  use
+d on input line 1190.
 (pdftex.def)             Requested size: 436.63019pt x 282.05305pt.
-[28 <./project_files/figure-latex/unnamed-chunk-27-1.pdf> <./project_files/figu
-re-latex/unnamed-chunk-27-2.pdf>]
-<project_files/figure-latex/unnamed-chunk-27-4.pdf, id=386, 436.63126pt x 248.9
+[29 <./project_files/figure-latex/unnamed-chunk-27-1.pdf>]
+<project_files/figure-latex/unnamed-chunk-28-2.pdf, id=399, 436.63126pt x 282.0
+5376pt>
+File: project_files/figure-latex/unnamed-chunk-28-2.pdf Graphic file (type pdf)
+
+<use project_files/figure-latex/unnamed-chunk-28-2.pdf>
+Package pdftex.def Info: project_files/figure-latex/unnamed-chunk-28-2.pdf  use
+d on input line 1198.
+(pdftex.def)             Requested size: 436.63019pt x 282.05305pt.
+<project_files/figure-latex/unnamed-chunk-28-3.pdf, id=400, 436.63126pt x 282.0
+5376pt>
+File: project_files/figure-latex/unnamed-chunk-28-3.pdf Graphic file (type pdf)
+
+<use project_files/figure-latex/unnamed-chunk-28-3.pdf>
+Package pdftex.def Info: project_files/figure-latex/unnamed-chunk-28-3.pdf  use
+d on input line 1206.
+(pdftex.def)             Requested size: 436.63019pt x 282.05305pt.
+[30 <./project_files/figure-latex/unnamed-chunk-28-1.pdf> <./project_files/figu
+re-latex/unnamed-chunk-28-2.pdf>]
+<project_files/figure-latex/unnamed-chunk-28-4.pdf, id=419, 436.63126pt x 248.9
 3pt>
-File: project_files/figure-latex/unnamed-chunk-27-4.pdf Graphic file (type pdf)
+File: project_files/figure-latex/unnamed-chunk-28-4.pdf Graphic file (type pdf)
 
-<use project_files/figure-latex/unnamed-chunk-27-4.pdf>
-Package pdftex.def Info: project_files/figure-latex/unnamed-chunk-27-4.pdf  use
-d on input line 1167.
+<use project_files/figure-latex/unnamed-chunk-28-4.pdf>
+Package pdftex.def Info: project_files/figure-latex/unnamed-chunk-28-4.pdf  use
+d on input line 1214.
 (pdftex.def)             Requested size: 436.63019pt x 248.92938pt.
-<project_files/figure-latex/unnamed-chunk-27-5.pdf, id=387, 436.63126pt x 283.0
+<project_files/figure-latex/unnamed-chunk-28-5.pdf, id=420, 436.63126pt x 283.0
 575pt>
-File: project_files/figure-latex/unnamed-chunk-27-5.pdf Graphic file (type pdf)
+File: project_files/figure-latex/unnamed-chunk-28-5.pdf Graphic file (type pdf)
 
-<use project_files/figure-latex/unnamed-chunk-27-5.pdf>
-Package pdftex.def Info: project_files/figure-latex/unnamed-chunk-27-5.pdf  use
-d on input line 1175.
+<use project_files/figure-latex/unnamed-chunk-28-5.pdf>
+Package pdftex.def Info: project_files/figure-latex/unnamed-chunk-28-5.pdf  use
+d on input line 1222.
 (pdftex.def)             Requested size: 436.63019pt x 283.0568pt.
-[29 <./project_files/figure-latex/unnamed-chunk-27-3.pdf> <./project_files/figu
-re-latex/unnamed-chunk-27-4.pdf>]
-<project_files/figure-latex/unnamed-chunk-27-6.pdf, id=406, 436.63126pt x 283.0
+[31 <./project_files/figure-latex/unnamed-chunk-28-3.pdf> <./project_files/figu
+re-latex/unnamed-chunk-28-4.pdf>]
+<project_files/figure-latex/unnamed-chunk-28-6.pdf, id=441, 436.63126pt x 283.0
 575pt>
-File: project_files/figure-latex/unnamed-chunk-27-6.pdf Graphic file (type pdf)
+File: project_files/figure-latex/unnamed-chunk-28-6.pdf Graphic file (type pdf)
 
-<use project_files/figure-latex/unnamed-chunk-27-6.pdf>
-Package pdftex.def Info: project_files/figure-latex/unnamed-chunk-27-6.pdf  use
-d on input line 1184.
+<use project_files/figure-latex/unnamed-chunk-28-6.pdf>
+Package pdftex.def Info: project_files/figure-latex/unnamed-chunk-28-6.pdf  use
+d on input line 1231.
 (pdftex.def)             Requested size: 436.63019pt x 283.0568pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1184--1186
+Underfull \hbox (badness 10000) in paragraph at lines 1231--1233
 [][] \T1/lmr/m/n/10 (+20) Con-
  []
 
-[30 <./project_files/figure-latex/unnamed-chunk-27-5.pdf> <./project_files/figu
-re-latex/unnamed-chunk-27-6.pdf>]
-<project_files/figure-latex/unnamed-chunk-29-1.pdf, id=427, 459.7175pt x 315.17
+[32 <./project_files/figure-latex/unnamed-chunk-28-5.pdf> <./project_files/figu
+re-latex/unnamed-chunk-28-6.pdf>]
+<project_files/figure-latex/unnamed-chunk-30-1.pdf, id=463, 459.7175pt x 315.17
 75pt>
-File: project_files/figure-latex/unnamed-chunk-29-1.pdf Graphic file (type pdf)
-
-<use project_files/figure-latex/unnamed-chunk-29-1.pdf>
-Package pdftex.def Info: project_files/figure-latex/unnamed-chunk-29-1.pdf  use
-d on input line 1259.
-(pdftex.def)             Requested size: 459.74442pt x 315.19595pt.
-[31]
-<project_files/figure-latex/unnamed-chunk-30-1.pdf, id=434, 436.63126pt x 282.0
-5376pt>
 File: project_files/figure-latex/unnamed-chunk-30-1.pdf Graphic file (type pdf)
 
 <use project_files/figure-latex/unnamed-chunk-30-1.pdf>
 Package pdftex.def Info: project_files/figure-latex/unnamed-chunk-30-1.pdf  use
-d on input line 1267.
-(pdftex.def)             Requested size: 436.63019pt x 282.05305pt.
-[32 <./project_files/figure-latex/unnamed-chunk-29-1.pdf> <./project_files/figu
-re-latex/unnamed-chunk-30-1.pdf>]
-<project_files/figure-latex/unnamed-chunk-30-2.pdf, id=456, 436.63126pt x 282.0
-5376pt>
-File: project_files/figure-latex/unnamed-chunk-30-2.pdf Graphic file (type pdf)
-
-<use project_files/figure-latex/unnamed-chunk-30-2.pdf>
-Package pdftex.def Info: project_files/figure-latex/unnamed-chunk-30-2.pdf  use
-d on input line 1275.
-(pdftex.def)             Requested size: 436.63019pt x 282.05305pt.
-<project_files/figure-latex/unnamed-chunk-30-3.pdf, id=457, 436.63126pt x 282.0
-5376pt>
-File: project_files/figure-latex/unnamed-chunk-30-3.pdf Graphic file (type pdf)
-
-<use project_files/figure-latex/unnamed-chunk-30-3.pdf>
-Package pdftex.def Info: project_files/figure-latex/unnamed-chunk-30-3.pdf  use
-d on input line 1283.
-(pdftex.def)             Requested size: 436.63019pt x 282.05305pt.
-<project_files/figure-latex/unnamed-chunk-30-4.pdf, id=458, 436.63126pt x 250.9
-375pt>
-File: project_files/figure-latex/unnamed-chunk-30-4.pdf Graphic file (type pdf)
-
-<use project_files/figure-latex/unnamed-chunk-30-4.pdf>
-Package pdftex.def Info: project_files/figure-latex/unnamed-chunk-30-4.pdf  use
-d on input line 1291.
-(pdftex.def)             Requested size: 436.63019pt x 250.93687pt.
-[33 <./project_files/figure-latex/unnamed-chunk-30-2.pdf> <./project_files/figu
-re-latex/unnamed-chunk-30-3.pdf>]
-<project_files/figure-latex/unnamed-chunk-30-5.pdf, id=477, 436.63126pt x 283.0
-575pt>
-File: project_files/figure-latex/unnamed-chunk-30-5.pdf Graphic file (type pdf)
-
-<use project_files/figure-latex/unnamed-chunk-30-5.pdf>
-Package pdftex.def Info: project_files/figure-latex/unnamed-chunk-30-5.pdf  use
-d on input line 1299.
-(pdftex.def)             Requested size: 436.63019pt x 283.0568pt.
-<project_files/figure-latex/unnamed-chunk-30-6.pdf, id=478, 436.63126pt x 283.0
-575pt>
-File: project_files/figure-latex/unnamed-chunk-30-6.pdf Graphic file (type pdf)
-
-<use project_files/figure-latex/unnamed-chunk-30-6.pdf>
-Package pdftex.def Info: project_files/figure-latex/unnamed-chunk-30-6.pdf  use
 d on input line 1308.
+(pdftex.def)             Requested size: 459.74442pt x 315.19595pt.
+[33]
+<project_files/figure-latex/unnamed-chunk-31-1.pdf, id=468, 436.63126pt x 282.0
+5376pt>
+File: project_files/figure-latex/unnamed-chunk-31-1.pdf Graphic file (type pdf)
+
+<use project_files/figure-latex/unnamed-chunk-31-1.pdf>
+Package pdftex.def Info: project_files/figure-latex/unnamed-chunk-31-1.pdf  use
+d on input line 1316.
+(pdftex.def)             Requested size: 436.63019pt x 282.05305pt.
+[34 <./project_files/figure-latex/unnamed-chunk-30-1.pdf> <./project_files/figu
+re-latex/unnamed-chunk-31-1.pdf>]
+<project_files/figure-latex/unnamed-chunk-31-2.pdf, id=490, 436.63126pt x 282.0
+5376pt>
+File: project_files/figure-latex/unnamed-chunk-31-2.pdf Graphic file (type pdf)
+
+<use project_files/figure-latex/unnamed-chunk-31-2.pdf>
+Package pdftex.def Info: project_files/figure-latex/unnamed-chunk-31-2.pdf  use
+d on input line 1324.
+(pdftex.def)             Requested size: 436.63019pt x 282.05305pt.
+<project_files/figure-latex/unnamed-chunk-31-3.pdf, id=491, 436.63126pt x 282.0
+5376pt>
+File: project_files/figure-latex/unnamed-chunk-31-3.pdf Graphic file (type pdf)
+
+<use project_files/figure-latex/unnamed-chunk-31-3.pdf>
+Package pdftex.def Info: project_files/figure-latex/unnamed-chunk-31-3.pdf  use
+d on input line 1332.
+(pdftex.def)             Requested size: 436.63019pt x 282.05305pt.
+<project_files/figure-latex/unnamed-chunk-31-4.pdf, id=492, 436.63126pt x 250.9
+375pt>
+File: project_files/figure-latex/unnamed-chunk-31-4.pdf Graphic file (type pdf)
+
+<use project_files/figure-latex/unnamed-chunk-31-4.pdf>
+Package pdftex.def Info: project_files/figure-latex/unnamed-chunk-31-4.pdf  use
+d on input line 1340.
+(pdftex.def)             Requested size: 436.63019pt x 250.93687pt.
+[35 <./project_files/figure-latex/unnamed-chunk-31-2.pdf> <./project_files/figu
+re-latex/unnamed-chunk-31-3.pdf>]
+<project_files/figure-latex/unnamed-chunk-31-5.pdf, id=511, 436.63126pt x 283.0
+575pt>
+File: project_files/figure-latex/unnamed-chunk-31-5.pdf Graphic file (type pdf)
+
+<use project_files/figure-latex/unnamed-chunk-31-5.pdf>
+Package pdftex.def Info: project_files/figure-latex/unnamed-chunk-31-5.pdf  use
+d on input line 1348.
 (pdftex.def)             Requested size: 436.63019pt x 283.0568pt.
-[34 <./project_files/figure-latex/unnamed-chunk-30-4.pdf> <./project_files/figu
-re-latex/unnamed-chunk-30-5.pdf>] [35 <./project_files/figure-latex/unnamed-chu
-nk-30-6.pdf>] (./project.aux) ) 
+<project_files/figure-latex/unnamed-chunk-31-6.pdf, id=512, 436.63126pt x 283.0
+575pt>
+File: project_files/figure-latex/unnamed-chunk-31-6.pdf Graphic file (type pdf)
+
+<use project_files/figure-latex/unnamed-chunk-31-6.pdf>
+Package pdftex.def Info: project_files/figure-latex/unnamed-chunk-31-6.pdf  use
+d on input line 1357.
+(pdftex.def)             Requested size: 436.63019pt x 283.0568pt.
+[36 <./project_files/figure-latex/unnamed-chunk-31-4.pdf> <./project_files/figu
+re-latex/unnamed-chunk-31-5.pdf>] [37 <./project_files/figure-latex/unnamed-chu
+nk-31-6.pdf>] (./project.aux) ) 
 Here is how much of TeX's memory you used:
- 14164 strings out of 478268
- 232830 string characters out of 5846348
- 558522 words of memory out of 5000000
- 31947 multiletter control sequences out of 15000+600000
+ 14197 strings out of 478268
+ 233742 string characters out of 5846348
+ 558915 words of memory out of 5000000
+ 31965 multiletter control sequences out of 15000+600000
  518565 words of font info for 105 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 74i,6n,77p,1004b,516s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 74i,6n,77p,1004b,518s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/local/texlive/2022/texmf-dist/fonts/enc/dv
 ips/lm/lm-ts1.enc}{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-ec.
 enc}</usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/
@@ -886,10 +901,10 @@ xmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2022/texmf-dist/fo
 nts/type1/public/lm/lmr17.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/p
 ublic/lm/lmtt10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/l
 mtti10.pfb>
-Output written on project.pdf (35 pages, 1378602 bytes).
+Output written on project.pdf (37 pages, 1717199 bytes).
 PDF statistics:
- 611 PDF objects out of 1000 (max. 8388607)
- 452 compressed objects within 5 object streams
- 97 named destinations out of 1000 (max. 500000)
- 26897 words of extra memory for PDF output out of 29859 (max. 10000000)
+ 670 PDF objects out of 1000 (max. 8388607)
+ 505 compressed objects within 6 object streams
+ 111 named destinations out of 1000 (max. 500000)
+ 26950 words of extra memory for PDF output out of 29859 (max. 10000000)
 
