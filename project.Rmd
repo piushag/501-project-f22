@@ -14,20 +14,35 @@ library(tidyverse)
 ```
 Attribute Information:
 
-Age: Age of the individual
-workclass: 
-fnlwgt:
-education:
-education_num:
-marital_status:
-occupation:
-relationship:
-sex:
-capital_gain:
-capital_loss:
-hours_per_week:
-native_country:
-fifty_k:
+Parameters -
+
+age: the age of an individual
+
+workclass: a general term to represent the employment status of an individual
+
+fnlwgt: final weight. This is the number of people the census believes the entry represents.
+
+education: the highest level of education achieved by an individual.
+
+education_num: the highest level of education achieved in numerical form.
+
+marital_status: marital status of an individual.
+
+occupation: the general type of occupation of an individual
+
+relationship: represents what this individual is relative to others.
+
+race: Descriptions of an individual’s race
+
+sex: the sex of the individual
+
+capital_gain: capital gains for an individual
+
+capital_loss: capital loss for an individual
+
+hours_per_week: the hours an individual has reported to work per week
+
+native_country: country of origin for an individual
 
 NOTE: Some values in the dataset is marked as "?". It means the value is unknown.
 ## Load Data
@@ -46,13 +61,19 @@ summary(adult)
 Motivation: we want to find out if the capital gain differs based on gender.
 
 Assumptions:
+
 1. The dataset is a random sample of original population.
+
 2. The data comes from a normal distribution.
+
 3. The sample size is large enough to conduct any test.
+
 4. And the final assumptions is homogeneity of variance. 
 
 Hypothesis:
+
 H0: capital gain is equal for both gender
+
 Ha: capital gain is not equal.
 
 ```{r}
@@ -78,7 +99,11 @@ gain_sex %>%
 
 ```
 Conclusion:
-Looking at the p value which is close to 0, we can reject the null hypothesis. We have evidence that suggests that the true difference in means between group Female and group Male is not equal to 0. We have evidence to say that there is a difference in the average capital gain of Male and Female
+Looking at the p value which is close to 0, we can reject the null hypothesis. 
+
+We have evidence that suggests that the true difference in means between group Female and group Male is not equal to 0. 
+
+We have evidence to say that there is a difference in the average capital gain of Male and Female
 
 ```{r}
 t.test(capital_loss ~ sex, data=adult) # Unpooled
@@ -90,13 +115,19 @@ t.test(capital_loss ~ sex, var.equal=TRUE, data=adult)  # Pooled
 Motivation: we want to find out if the capital gain differs based on race.
 
 Assumptions:
+
 1. The dataset is a random sample of original population.
+
 2. The data comes from a normal distribution.
+
 3. The sample size is large enough to conduct any test.
+
 4. And the final assumptions is homogeneity of variance. 
 
 Hypothesis:
+
 H0: capital gain is equal for all race
+
 Ha: there exist a pair of race for which capital gain is not equal.
 
 
@@ -132,23 +163,25 @@ From the Tukey Test, we can see that there is a significant difference between t
 
 From the plots, we can see that the maximum average capital gain is in the race Asian-Pac-Islander.
 
-<<<<<<< Updated upstream
 
-# Checking if average capital gain differs by Occupation
-=======
 # Checking if average capital gain differs by occupation
->>>>>>> Stashed changes
 
 Motivation: we want to find out if the capital gain differs based on occupation.
 
 Assumptions:
+
 1. The dataset is a random sample of original population.
+
 2. The data comes from a normal distribution.
+
 3. The sample size is large enough to conduct any test.
+
 4. And the final assumptions is homogeneity of variance. 
 
 Hypothesis:
+
 H0: capital gain is equal for all occupation
+
 Ha: there exist a pair of occupation for which capital gain is not equal.
 
 
@@ -185,13 +218,19 @@ From the plots, we can see that the maximum average capital gain is in the occup
 Motivation: we want to find out if the capital gain differs based on workclass.
 
 Assumptions:
+
 1. The dataset is a random sample of original population.
+
 2. The data comes from a normal distribution.
+
 3. The sample size is large enough to conduct any test.
+
 4. And the final assumptions is homogeneity of variance. 
 
 Hypothesis:
+
 H0: capital gain is equal for all workclass
+
 Ha: there exist a pair of workclass for which capital gain is not equal.
 
 ```{r}
@@ -226,13 +265,19 @@ From the plots, we can see that the maximum average capital gain is in the occup
 Motivation: we want to find out if the capital gain differs based on education level.
 
 Assumptions:
+
 1. The dataset is a random sample of original population.
+
 2. The data comes from a normal distribution.
+
 3. The sample size is large enough to conduct any test.
+
 4. And the final assumptions is homogeneity of variance. 
 
 Hypothesis:
+
 H0: capital gain is equal for education level
+
 Ha: there exist a pair of education level for which capital gain is not equal.
 
 ```{r}
@@ -378,46 +423,7 @@ From the Tukey test, we can see the p-values for different marital status pairs,
 From the plots, we can see that the maximum average capital gain is with married-civ-spouse.
 
 
-<<<<<<< Updated upstream
 # Real Estate data set: Real_Estate
-=======
-# Checking if average capital gain differs by native country
-
-```{r}
-# adult %>%
-#   group_by(native_country) %>%
-#   summarise(record_count = n())
-
-anov_race <- aov(capital_gain ~ native_country, data = adult)
-summary(anov_race)
-#TukeyHSD(anov_race)
-
-```
-```{r fig.width=100, fig.height=20}
-
-# gain_country<-adult %>%
-#   group_by(native_country) %>%
-#   summarize(avg_captital_gain=mean(capital_gain))
-# 
-# gain_country %>%
-#   ggplot(aes(x=native_country, y=avg_captital_gain))+
-#   geom_tile(color="red",size=1)
-
-```
-
-```{r}
-#plot(TukeyHSD(aov(capital_gain ~ native_country, data = adult)))
-```
-
-
-
-
-
-
-
-
-# Real Estate data set
->>>>>>> Stashed changes
 
 ```{r}
 real_estate <- read.csv("Real_Estate.csv")
@@ -452,9 +458,13 @@ summary(m1)
 xyplot(Y.house.price.of.unit.area ~ X3.distance.to.the.nearest.MRT.station,data=real_estate,type=c("p","r"))  # negative
 ```
 Assumption Check:
+
 1. Residual are uniformly distributed around y=0 horizontal line.
+
 2. Residual follows normal distribution.
+
 3. The relationship between two variables should be linear.
+
 4. The observation should be independent of each other.
 
 ```{r}
@@ -468,6 +478,7 @@ qqnorm(resid(m1))
 qqline(resid(m1))
 ```
 Conclusion:
+
 All assuptions holds here. From differnt graphs we can see that the conditions for linear model fitting holds. 
 
 #Checking if house price varies with number of convenience stores:
