@@ -474,7 +474,22 @@ This means we do not have sufficient evidence to say that the mean capital gain 
 
 From the plots, we can see that the maximum average capital gain is for native country India.
 
+#Linear Regression on Census Data
+```{r}
+xyplot(capital_gain ~ age, data=adult)
+```
+As from initial plot, we can see that capital gain and age not in linear relationship, there is no point to fit a linear model with the data.
+
 # Real Estate data set: Real_Estate
+
+Attributes:
+transaction date: Date of transaction
+House age
+Distance to nearest metro station
+Number of convenience stores
+Latitude 
+Longitude
+Price of house per area
 
 ```{r}
 real_estate <- read.csv("Real_Estate.csv")
