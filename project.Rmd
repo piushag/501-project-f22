@@ -140,7 +140,7 @@ anov_race <- aov(capital_gain ~ race, data = adult)
 summary(anov_race)
 #TukeyHSD(anov_race) 
 ```
-```{r fig.width=8}
+```{r fig.width=10}
 gain_race<-adult %>%
   group_by(race) %>%
   summarize(avg_captital_gain=mean(capital_gain))
@@ -155,6 +155,7 @@ gain_race %>%
 ```{r fig.height=10}
 plot(TukeyHSD(aov(capital_gain ~ race, data = adult)))
 ```
+
 Since the p-value in our ANOVA table (0.00132) is less than .05, we have sufficient evidence to reject the null hypothesis.
 
 This means we have sufficient evidence to say that the mean capital gain is not equal across different races.
@@ -252,6 +253,7 @@ gain_wc %>%
 
 ```
 
+
 Since the p-value in our ANOVA table (10\^-16) is less than .05, we have sufficient evidence to reject the null hypothesis.
 
 This means we have sufficient evidence to say that the mean capital gain is not equal across different workclass.
@@ -294,7 +296,7 @@ summary(anov_edu)
 plot(TukeyHSD(aov(capital_gain ~ education, data = adult)))
 ```
 
-```{r fig.width=10, fig.height=5}
+```{r fig.width=15, fig.height=5}
 
 gain_edu<-adult %>%
   group_by(education) %>%
@@ -402,7 +404,7 @@ summary(anov_race)
 plot(TukeyHSD(aov(capital_gain ~ marital_status, data = adult)))
 ```
 
-```{r fig.width=10, fig.height=4}
+```{r fig.width=15, fig.height=4}
 gain_marital<-adult %>%
   group_by(marital_status) %>%
   summarize(avg_captital_gain=mean(capital_gain))
@@ -503,6 +505,7 @@ plot(density(resid(m3)))
 qqnorm(resid(m3))
 qqline(resid(m3))
 ```
+
 Conclusion:
 
 From the above graphs, the relationship between house price and house age is not linear, and from Q_Q plot also, we can see that the residuals are not on a straight lines and uniform distribution of error around y=0 horizontal lines doesn't hold also, so we should not use linear model to predict the house price based on house age. And if we build the model, we can see that the R-squared value is around 4%, which also indicates linear model is not suitable to predict the house price based on house age.
