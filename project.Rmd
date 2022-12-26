@@ -526,11 +526,16 @@ As from initial plot, we can see that capital gain and age not in linear relatio
 
 We checked if linear regression can be used for any of the numerical attributes vs capital gain, but we noticed no significant information that points to a linear relationship, hence we did not use any linear models.
 
-#Summary:
+# Summary:
+
 After analyzing the dataset, we concluded following points.
+
 1. Capital gain is not equal and varies based on multiple factors.
+
 2. On average a male has higher capital gain than a woman.
+
 3. The capital gain differs based on race. 
+
 4. From hypothesis tests, we also observed that work class, occupation and education levels also play major role deciding the capital gain. Capital gain is not equal across all these attributes. 
 
 # Real Estate data set
@@ -653,7 +658,7 @@ qqline(resid(m3))
 
 From the above graphs, the relationship between house price and house age is not linear, and from Q_Q plot also, we can see that the residuals are not on a straight lines and uniform distribution of error around y=0 horizontal lines doesn't hold also, so we should not use linear model to predict the house price based on house age. And if we build the model, we can see that the R-squared value is around 4%, which also indicates linear model is not suitable to predict the house price based on house age.
 
-#Summary:
+# Summary:
 
 After analyzing the the dataset we found following points:
 
