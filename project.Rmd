@@ -1,8 +1,15 @@
 ---
 title: "Statistics 501 final Project"
-output: pdf_document
+output: 
+  pdf_document:
+    toc: true
+    toc_depth: 3
+    number_sections: true
 date: "2022-12-25"
-author: Debabrata Halder, Piusha Gullapalli, Snehil Verma
+author: "Debabrata Halder, Piusha Gullapalli, Snehil Verma"
+header-includes:
+    - \usepackage{sectsty}
+    - \allsectionsfont{\color{cyan}}
 ---
 
 ```{r setup, include=FALSE}
@@ -12,6 +19,7 @@ library(mosaic)
 library(dplyr)
 library(tidyverse)
 ```
+
 
 
 # Introduction and Data Background -
