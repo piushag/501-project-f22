@@ -402,6 +402,24 @@ race_sex %>%
 
 # Average capital gain vs earning greater than or less than or equal to 50k
 
+Motivation: we want to find out if the capital gain differs based on earning.
+
+## Assumptions
+
+1. The dataset is a random sample of original population.
+
+2. The data comes from a normal distribution.
+
+3. The sample size is large enough to conduct any test.
+
+4. And the final assumptions is homogeneity of variance. 
+
+## Hypothesis
+
+H0: capital gain is equal for who earns 50k and who doesn't.
+
+Ha: capital gain is not equal for who earns 50k and who doesn't.
+
 ```{r}
 # adult %>%
 #   group_by(fifty_k) %>%
@@ -433,6 +451,25 @@ We have evidence that suggests that the true difference in means between group t
 We have evidence to say that there is a significant difference in the average capital gain.
 
 # Testing relationship between capital gain and marital status
+
+Motivation: we want to find out if the capital gain differs based on marital status
+
+## Assumptions
+
+1. The dataset is a random sample of original population.
+
+2. The data comes from a normal distribution.
+
+3. The sample size is large enough to conduct any test.
+
+4. And the final assumptions is homogeneity of variance. 
+
+## Hypothesis
+
+H0: capital gain is equal for all marital status.
+
+Ha: there exist a pair of marital status for which capital gain is not equal.
+
 
 ```{r}
 # adult %>%
