@@ -1,7 +1,8 @@
 ---
-title: "501-project"
+title: "Stats 501 final Project"
 output: pdf_document
-date: "2022-12-18"
+date: "2022-12-25"
+author: Debabrata Halder, Piusha Gullapalli, Snehil Verma
 ---
 
 ```{r setup, include=FALSE}
@@ -34,7 +35,6 @@ NOTE: Some values in the dataset is marked as "?". It means the value is unknown
 ```{r}
 adult <- read.table("adult.data", sep = ",")
 colnames(adult) <- c("age", "workclass", "fnlwgt", "education", "education_num", "marital_status", "occupation", "relationship", "race", "sex", "capital_gain", "capital_loss", "hours_per_week", "native_country", "fifty_k")
-adult
 ```
 
 ```{r}
@@ -107,8 +107,9 @@ Ha: there exist a pair of race for which capital gain is not equal.
 
 anov_race <- aov(capital_gain ~ race, data = adult)
 summary(anov_race)
-TukeyHSD(anov_race) 
-
+#TukeyHSD(anov_race) 
+```
+```{r fig.width=8}
 gain_race<-adult %>%
   group_by(race) %>%
   summarize(avg_captital_gain=mean(capital_gain))
@@ -131,8 +132,12 @@ From the Tukey Test, we can see that there is a significant difference between t
 
 From the plots, we can see that the maximum average capital gain is in the race Asian-Pac-Islander.
 
+<<<<<<< Updated upstream
 
 # Checking if average capital gain differs by Occupation
+=======
+# Checking if average capital gain differs by occupation
+>>>>>>> Stashed changes
 
 Motivation: we want to find out if the capital gain differs based on occupation.
 
@@ -150,22 +155,21 @@ Ha: there exist a pair of occupation for which capital gain is not equal.
 ```{r}
 anov_occ <- aov(capital_gain ~ occupation, data = adult)
 summary(anov_occ)
-TukeyHSD(anov_occ)
+#TukeyHSD(anov_occ)
 ```
 
 ```{r fig.height=20}
 plot(TukeyHSD(aov(capital_gain ~ occupation, data = adult)))
 ```
 
-```{r fig.width=10, fig.height=5}
+```{r fig.width=20, fig.height=5}
 gain_occupation<-adult %>%
   group_by(occupation) %>%
   summarize(avg_captital_gain=mean(capital_gain))
 
 gain_occupation %>%
-  ggplot(aes(x=occupation, y=avg_captital_gain,fill=avg_captital_gain))+
-  geom_tile(color="white",size=0.3)+
-  scale_fill_gradient(low="blue",high="red")
+  ggplot(aes(x=occupation, y=avg_captital_gain))+
+  geom_tile(color="red",size=1)
 ```
 
 Since the p-value in our ANOVA table (10\^-16) is less than .05, we have sufficient evidence to reject the null hypothesis.
@@ -176,7 +180,7 @@ From the Tukey test, we can see the p-values for different occupation pairs, and
 
 From the plots, we can see that the maximum average capital gain is in the occupation of Exec-managerial.
 
-# Checking if average capital gain differs by Workclass
+# Checking if average capital gain differs by workclass
 
 Motivation: we want to find out if the capital gain differs based on workclass.
 
@@ -193,7 +197,7 @@ Ha: there exist a pair of workclass for which capital gain is not equal.
 ```{r}
 anov_wc <- aov(capital_gain ~ workclass, data = adult)
 summary(anov_wc)
-TukeyHSD(anov_wc)
+#TukeyHSD(anov_wc)
 ```
 ```{r fig.height=20}
 plot(TukeyHSD(aov(capital_gain ~ workclass, data = adult)))
@@ -204,9 +208,8 @@ gain_wc<-adult %>%
   summarize(avg_captital_gain=mean(capital_gain))
 
 gain_wc %>%
-  ggplot(aes(x=workclass, y=avg_captital_gain,fill=avg_captital_gain))+
-  geom_tile(color="white",size=0.3)+
-  scale_fill_gradient(low="blue",high="red")
+  ggplot(aes(x=workclass, y=avg_captital_gain))+
+  geom_tile(color="red",size=1)
 
 ```
 
@@ -239,7 +242,7 @@ Ha: there exist a pair of education level for which capital gain is not equal.
 
 anov_edu <- aov(capital_gain ~ education, data = adult)
 summary(anov_edu)
-TukeyHSD(anov_edu)
+#TukeyHSD(anov_edu)
 ```
 
 ```{r fig.height=10}
@@ -347,7 +350,7 @@ We have evidence to say that there is a significant difference in the average ca
 
 anov_race <- aov(capital_gain ~ marital_status, data = adult)
 summary(anov_race)
-TukeyHSD(anov_race)
+#TukeyHSD(anov_race)
 ```
 
 ```{r fig.height=10}
@@ -375,7 +378,46 @@ From the Tukey test, we can see the p-values for different marital status pairs,
 From the plots, we can see that the maximum average capital gain is with married-civ-spouse.
 
 
+<<<<<<< Updated upstream
 # Real Estate data set: Real_Estate
+=======
+# Checking if average capital gain differs by native country
+
+```{r}
+# adult %>%
+#   group_by(native_country) %>%
+#   summarise(record_count = n())
+
+anov_race <- aov(capital_gain ~ native_country, data = adult)
+summary(anov_race)
+#TukeyHSD(anov_race)
+
+```
+```{r fig.width=100, fig.height=20}
+
+# gain_country<-adult %>%
+#   group_by(native_country) %>%
+#   summarize(avg_captital_gain=mean(capital_gain))
+# 
+# gain_country %>%
+#   ggplot(aes(x=native_country, y=avg_captital_gain))+
+#   geom_tile(color="red",size=1)
+
+```
+
+```{r}
+#plot(TukeyHSD(aov(capital_gain ~ native_country, data = adult)))
+```
+
+
+
+
+
+
+
+
+# Real Estate data set
+>>>>>>> Stashed changes
 
 ```{r}
 real_estate <- read.csv("Real_Estate.csv")
@@ -428,7 +470,7 @@ qqline(resid(m1))
 Conclusion:
 All assuptions holds here. From differnt graphs we can see that the conditions for linear model fitting holds. 
 
-New analysis:
+#Checking if house price varies with number of convenience stores:
 
 ```{r}
 m2 <- lm(Y.house.price.of.unit.area ~  X4.number.of.convenience.stores,  data=real_estate)
