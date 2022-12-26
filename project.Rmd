@@ -14,12 +14,27 @@ library(tidyverse)
 ```
 
 
-Data Background -
+# Introduction and Data Background -
 
-This data was extracted from the 1994 Census bureau database by Ronny Kohavi and Barry Becker (data Mining and Visualization, Silicon Graphics).
+This data was extracted by Barry Becker from the 1994 Census database.
 
+The data was extracted to be used for a prediction task to determine whether a person makes over 50K a year.
 
-Attribute Information:
+Conversion of original data as follows:
+
+1. Discretized agrossincome into two ranges with threshold 50,000.
+
+2. Convert U.S. to US to avoid periods.
+
+3. Convert Unknown to "?"
+
+4. Run MLC++ GenCVFiles to generate data,test.
+
+Description of fnlwgt (final weight):
+
+The weights on the CPS files are controlled to independent estimates of the civilian non institutional population of the US.  These are prepared monthly for us by Population Division here at the Census Bureau.
+
+## Attribute Information:
 
 Parameters -
 
@@ -52,7 +67,8 @@ hours_per_week: the hours an individual has reported to work per week
 native_country: country of origin for an individual
 
 NOTE: Some values in the dataset is marked as "?". It means the value is unknown.
-## Load Data
+
+## Loading the Data
 
 ```{r}
 adult <- read.table("adult.data", sep = ",")
@@ -106,6 +122,7 @@ gain_sex %>%
 
 ```
 Conclusion:
+
 Looking at the p value which is close to 0, we can reject the null hypothesis. 
 
 We have evidence that suggests that the true difference in means between group Female and group Male is not equal to 0. 
