@@ -1,5 +1,5 @@
 ---
-title: "Stats 501 final Project"
+title: "Statistics 501 final Project"
 output: pdf_document
 date: "2022-12-25"
 author: Debabrata Halder, Piusha Gullapalli, Snehil Verma
@@ -12,6 +12,13 @@ library(mosaic)
 library(dplyr)
 library(tidyverse)
 ```
+
+
+Data Background -
+
+This data was extracted from the 1994 Census bureau database by Ronny Kohavi and Barry Becker (data Mining and Visualization, Silicon Graphics).
+
+
 Attribute Information:
 
 Parameters -
@@ -424,6 +431,48 @@ From the Tukey test, we can see the p-values for different marital status pairs,
 
 From the plots, we can see that the maximum average capital gain is with married-civ-spouse.
 
+# Checking if average capital gain differs by native country
+
+Motivation: we want to find out if the capital gain differs based on native country.
+
+Assumptions:
+
+1. The dataset is a random sample of original population.
+
+2. The data comes from a normal distribution.
+
+3. The sample size is large enough to conduct any test.
+
+4. And the final assumptions is homogeneity of variance. 
+
+Hypothesis:
+
+H0: capital gain is equal for different native countries
+
+Ha: there exist a pair of native countries for which capital gain is not equal.
+
+```{r fig.width=30, fig.height=15}
+# adult %>%
+#   group_by(native_country) %>%
+#   summarise(record_count = n())
+
+anov_country <- aov(capital_gain ~ native_country, data = adult)
+summary(anov_country)
+
+gain_country<-adult %>%
+  group_by(native_country) %>%
+  summarize(avg_captital_gain=mean(capital_gain))
+
+gain_country %>%
+  ggplot(aes(x=native_country, y=avg_captital_gain))+
+  geom_tile(color="red",size=1)
+
+```
+Since the p-value in our ANOVA table is greater than .05, we do not have sufficient evidence to reject the null hypothesis.
+
+This means we do not have sufficient evidence to say that the mean capital gain is not equal across different native countries.
+
+From the plots, we can see that the maximum average capital gain is for native country India.
 
 # Real Estate data set: Real_Estate
 
