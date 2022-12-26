@@ -91,7 +91,7 @@ summary(adult)
 
 Motivation: we want to find out if the capital gain differs based on sex.
 
-Assumptions:
+## Assumptions
 
 1. The dataset is a random sample of original population.
 
@@ -101,7 +101,7 @@ Assumptions:
 
 4. And the final assumptions is homogeneity of variance. 
 
-Hypothesis:
+## Hypothesis
 
 H0: capital gain is equal for both gender
 
@@ -129,7 +129,8 @@ gain_sex %>%
 
 
 ```
-Conclusion:
+
+## Conclusion
 
 Looking at the p value which is close to 0, we can reject the null hypothesis. 
 
@@ -146,7 +147,7 @@ t.test(capital_loss ~ sex, var.equal=TRUE, data=adult)  # Pooled
 
 Motivation: we want to find out if the capital gain differs based on race.
 
-Assumptions:
+## Assumptions
 
 1. The dataset is a random sample of original population.
 
@@ -156,7 +157,7 @@ Assumptions:
 
 4. And the final assumptions is homogeneity of variance. 
 
-Hypothesis:
+## Hypothesis
 
 H0: capital gain is equal for all race
 
@@ -188,6 +189,8 @@ gain_race %>%
 plot(TukeyHSD(aov(capital_gain ~ race, data = adult)))
 ```
 
+## Conclusion
+
 Since the p-value in our ANOVA table (0.00132) is less than .05, we have sufficient evidence to reject the null hypothesis.
 
 This means we have sufficient evidence to say that the mean capital gain is not equal across different races.
@@ -201,7 +204,7 @@ From the plots, we can see that the maximum average capital gain is in the race 
 
 Motivation: we want to find out if the capital gain differs based on occupation.
 
-Assumptions:
+## Assumptions
 
 1. The dataset is a random sample of original population.
 
@@ -211,7 +214,7 @@ Assumptions:
 
 4. And the final assumptions is homogeneity of variance. 
 
-Hypothesis:
+## Hypothesis
 
 H0: capital gain is equal for all occupation
 
@@ -238,6 +241,8 @@ gain_occupation %>%
   geom_tile(color="red",size=1)
 ```
 
+## Conclusion
+
 Since the p-value in our ANOVA table (10\^-16) is less than .05, we have sufficient evidence to reject the null hypothesis.
 
 This means we have sufficient evidence to say that the mean capital gain is not equal across different occupation.
@@ -250,7 +255,7 @@ From the plots, we can see that the maximum average capital gain is in the occup
 
 Motivation: we want to find out if the capital gain differs based on workclass.
 
-Assumptions:
+## Assumptions
 
 1. The dataset is a random sample of original population.
 
@@ -260,7 +265,7 @@ Assumptions:
 
 4. And the final assumptions is homogeneity of variance. 
 
-Hypothesis:
+## Hypothesis
 
 H0: capital gain is equal for all workclass
 
@@ -286,6 +291,8 @@ gain_wc %>%
 ```
 
 
+## Conclusion
+
 Since the p-value in our ANOVA table (10\^-16) is less than .05, we have sufficient evidence to reject the null hypothesis.
 
 This means we have sufficient evidence to say that the mean capital gain is not equal across different workclass.
@@ -298,7 +305,7 @@ From the plots, we can see that the maximum average capital gain is in the occup
 
 Motivation: we want to find out if the capital gain differs based on education level.
 
-Assumptions:
+## Assumptions
 
 1. The dataset is a random sample of original population.
 
@@ -308,7 +315,7 @@ Assumptions:
 
 4. And the final assumptions is homogeneity of variance. 
 
-Hypothesis:
+## Hypothesis
 
 H0: capital gain is equal for education level
 
@@ -355,6 +362,8 @@ gain_edu_num %>%
   ggplot(aes(x=education_num, y=avg_captital_gain))+
   geom_tile(color="blue",size=1)
 ```
+
+## Conclusion
 
 Since the p-value in our ANOVA table is less than .05, we have sufficient evidence to reject the null hypothesis.
 
@@ -414,6 +423,9 @@ gain_fifty %>%
 
 ```
 
+
+## Conclusion
+
 Looking at the p value which is close to 0, we can reject the null hypothesis.
 
 We have evidence that suggests that the true difference in means between group that earns less than or equal to 50k and more than 50 is not equal to 0.
@@ -448,6 +460,8 @@ gain_marital %>%
 
 ```
 
+## Conclusion
+
 Since the p-value in our ANOVA table is less than .05, we have sufficient evidence to reject the null hypothesis.
 
 This means we have sufficient evidence to say that the mean capital gain is not equal across different marital-status.
@@ -460,7 +474,7 @@ From the plots, we can see that the maximum average capital gain is with married
 
 Motivation: we want to find out if the capital gain differs based on native country.
 
-Assumptions:
+## Assumptions
 
 1. The dataset is a random sample of original population.
 
@@ -470,7 +484,7 @@ Assumptions:
 
 4. And the final assumptions is homogeneity of variance. 
 
-Hypothesis:
+## Hypothesis
 
 H0: capital gain is equal for different native countries
 
@@ -493,6 +507,9 @@ gain_country %>%
   geom_tile(color="red",size=1)
 
 ```
+
+## Conclusion
+
 Since the p-value in our ANOVA table is greater than .05, we do not have sufficient evidence to reject the null hypothesis.
 
 This means we do not have sufficient evidence to say that the mean capital gain is not equal across different native countries.
@@ -504,6 +521,7 @@ From the plots, we can see that the maximum average capital gain is for native c
 ```{r}
 xyplot(capital_gain ~ age, data=adult)
 ```
+
 As from initial plot, we can see that capital gain and age not in linear relationship, there is no point to fit a linear model with the data. 
 
 We checked if linear regression can be used for any of the numerical attributes vs capital gain, but we noticed no significant information that points to a linear relationship, hence we did not use any linear models.
@@ -511,9 +529,10 @@ We checked if linear regression can be used for any of the numerical attributes 
 # Real Estate data set
 
 ## Introduction
+
 We performed analysis on an additional real estate data set since we found it interesting.
 
-### Attributes:
+### Attributes
 
 transaction date: Date of transaction
 
@@ -563,7 +582,7 @@ summary(m1)
 xyplot(Y.house.price.of.unit.area ~ X3.distance.to.the.nearest.MRT.station,data=real_estate,type=c("p","r"))  # negative
 ```
 
-Assumption Check:
+### Assumptions
 
 1. Residual are uniformly distributed around y=0 horizontal line.
 
@@ -584,9 +603,9 @@ qqnorm(resid(m1))
 qqline(resid(m1))
 ```
 
-Conclusion:
+### Conclusion
 
-All assuptions holds here. From differnt graphs we can see that the conditions for linear model fitting holds. 
+All assumptions holds here. From different graphs we can see that the conditions for linear model fitting holds. 
 
 ## Testing if house price varies with number of convenience stores
 
@@ -611,6 +630,6 @@ qqnorm(resid(m3))
 qqline(resid(m3))
 ```
 
-Conclusion:
+### Conclusion
 
 From the above graphs, the relationship between house price and house age is not linear, and from Q_Q plot also, we can see that the residuals are not on a straight lines and uniform distribution of error around y=0 horizontal lines doesn't hold also, so we should not use linear model to predict the house price based on house age. And if we build the model, we can see that the R-squared value is around 4%, which also indicates linear model is not suitable to predict the house price based on house age.
