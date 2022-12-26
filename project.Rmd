@@ -530,23 +530,23 @@ We checked if linear regression can be used for any of the numerical attributes 
 
 ## Introduction
 
-We performed analysis on an additional real estate data set since we found it interesting.
+We performed analysis on an additional real estate data set since we found it interesting. This dataset has various attributes which could potentially affect house prices such as number of convenience stores, distance from metro stations and we aim to analyze and find if a linear relationship exists between the house price ( Y ) and any of the other parameters. This dataset has 414 observations.
 
 ### Attributes
 
-transaction date: Date of transaction
+1) X1.transaction.date - Date of transaction
 
-House age
+2) X2.house.age - Age of the property
 
-Distance to nearest metro station
+3) X3.distance.to.the.nearest.MRT.station - Distance to nearest metro station
 
-Number of convenience stores
+4) X4.number.of.convenience.stores - Number of convenience stores
 
-Latitude 
+5) X5.latitude - Latitude 
 
-Longitude
+6) X6.longitude - Longitude
 
-Price of house per area
+7) Y.house.price.of.unit.area - Price of house per area ( Response variable )
 
 ### Loading the data
 
