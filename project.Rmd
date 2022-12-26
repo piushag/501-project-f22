@@ -22,7 +22,7 @@ library(tidyverse)
 
 
 
-# Introduction and data Background
+# Introduction and data background
 
 This data was extracted by Barry Becker from the 1994 Census database.
 
@@ -42,7 +42,7 @@ Description of fnlwgt (final weight):
 
 The weights on the CPS files are controlled to independent estimates of the civilian non institutional population of the US.  These are prepared monthly for us by Population Division here at the Census Bureau.
 
-## Attribute Information
+## Attribute information
 
 Parameters -
 
@@ -569,11 +569,12 @@ After analyzing the dataset, we concluded following points.
 
 1. Capital gain is not equal and varies based on multiple factors.
 
-2. On average a male has higher capital gain than a woman.
+2. On average a male has higher capital gain than a female.
 
 3. The capital gain differs based on race. 
 
 4. From hypothesis tests, we also observed that work class, occupation and education levels also play major role deciding the capital gain. Capital gain is not equal across all these attributes. 
+
 
 # Real Estate data set
 
